@@ -3,8 +3,8 @@ HELP.md
 .gradle
 google-services.json
 build/
-app/release/
-app
+
+
 
 ### STS ###
 .apt_generated
