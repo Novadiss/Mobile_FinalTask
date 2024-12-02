@@ -3,8 +3,9 @@ HELP.md
 .gradle
 google-services.json
 build/
-
-
+gradle/caches
+gradle/daemon
+gradle/native
 
 ### STS ###
 .apt_generated
