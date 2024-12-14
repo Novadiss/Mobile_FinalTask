@@ -6,6 +6,7 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
+import io.qameta.allure.kotlin.Allure;
 import ru.iteco.fmhandroid.R;
 
 public class NewsPage {
@@ -20,12 +21,14 @@ public class NewsPage {
     }
 
     public void goToNewsPage() {
+        Allure.step("Переход на страницу новостей");
         pagesHelper.checkOnView(pagesHelper.getMainMenuImageButton());
         pagesHelper.buttonClickWithId(pagesHelper.getMainMenuImageButton());
         onView(withText(toNewsText)).check(matches(isDisplayed())).perform(click());
     }
 
     public void newsPageIsDisplayed() {
+        Allure.step("Проверка отображения страницы новостей");
         pagesHelper.checkOnView(newsPageId);
     }
 }

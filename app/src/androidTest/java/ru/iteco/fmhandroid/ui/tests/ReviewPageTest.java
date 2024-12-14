@@ -1,25 +1,21 @@
 package ru.iteco.fmhandroid.ui.tests;
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
-import androidx.test.filters.LargeTest;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+import io.qameta.allure.kotlin.junit4.DisplayName;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.pages.LoginPage;
-import ru.iteco.fmhandroid.ui.pages.NewsPage;
 import ru.iteco.fmhandroid.ui.pages.PagesHelper;
 import ru.iteco.fmhandroid.ui.pages.ReviewPage;
 
-@LargeTest
-@RunWith(AndroidJUnit4.class)
+@RunWith(AllureAndroidJUnit4.class)
 public class ReviewPageTest {
-
-
 
     private final PagesHelper pagesHelper = new PagesHelper();
     private final ReviewPage reviewPage = new ReviewPage();
@@ -31,20 +27,19 @@ public class ReviewPageTest {
 
     @Before
     public void checkReviewPageIsDisplayed() {
-        if (!reviewPage.reviewPageIsDisplayed()) {
+        if (!pagesHelper.checkPage(reviewPage.getReviewPageId())) {
             if (pagesHelper.checkPage(loginPage.getLoginId())) {
                 loginPage.validAuthentication();
                 reviewPage.goToReviewPage();
             } else {
                 reviewPage.goToReviewPage();
             }
-        } else {
-            return;
         }
     }
 
     @Test
+    @DisplayName("Проверка что страница отзывов отображается")
     public void reviewPageView() {
-        pagesHelper.textIsDisplayed(reviewPage.getReviewPageTextIsDisplayed());
+        reviewPage.reviewPageIsDisplayed();
     }
 }

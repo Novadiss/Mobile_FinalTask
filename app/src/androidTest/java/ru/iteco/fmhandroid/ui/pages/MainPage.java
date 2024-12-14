@@ -3,15 +3,11 @@ package ru.iteco.fmhandroid.ui.pages;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withHint;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.assertion.ViewAssertions.matches;
-
-import static ru.iteco.fmhandroid.ui.data.ViewActions.waitView;
 
 import androidx.test.espresso.ViewAssertion;
 
+import io.qameta.allure.kotlin.Allure;
 import ru.iteco.fmhandroid.R;
 
 public class MainPage {
@@ -27,14 +23,15 @@ public class MainPage {
     }
 
     public void goToMainPage() {
+        Allure.step("Переход на главную страницу");
         pagesHelper.checkOnView(pagesHelper.getMainMenuImageButton());
         pagesHelper.buttonClickWithId(pagesHelper.getMainMenuImageButton());
         onView(withHint(toMainMenu)).check((ViewAssertion) isDisplayed()).perform(click());
     }
 
     public void mainScreenPageIsDisplayed() {
+        Allure.step("Проверка отображения главной страницы");
         pagesHelper.checkOnView(mainScreenPageId);
         pagesHelper.checkOnView(mainPageNewsId);
     }
-
 }

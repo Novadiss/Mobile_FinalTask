@@ -1,21 +1,20 @@
 package ru.iteco.fmhandroid.ui.tests;
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
-import androidx.test.filters.LargeTest;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+import io.qameta.allure.kotlin.junit4.DisplayName;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.pages.LoginPage;
 import ru.iteco.fmhandroid.ui.pages.MainPage;
 import ru.iteco.fmhandroid.ui.pages.PagesHelper;
 
-@LargeTest
-@RunWith(AndroidJUnit4.class)
+@RunWith(AllureAndroidJUnit4.class)
 public class MainPageTest {
 
 
@@ -39,12 +38,9 @@ public class MainPageTest {
     }
 
     @Test
+    @DisplayName("Проверка что главная страница отображается")
     public void mainPageView() {
         mainPage.mainScreenPageIsDisplayed();
     }
 
-    @Test
-    public void newsIsDisplayed(){
-
-    }
 }
