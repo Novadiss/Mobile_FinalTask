@@ -51,3 +51,6 @@ captures/
 ### Gradle ###
 !gradle/wrapper/gradle-wrapper.jar
 gradle
+
+### Allure ###
+!archiv.zip
