@@ -48,7 +48,8 @@ public class PageAboutTest {
     @Test
     @DisplayName("Проверка что страница 'О приложении' отображается")
     public void goToPageAboutFromNews() {
-
+        newsPage.goToNewsPage();
+        pageAbout.goToAboutPage();
         pageAbout.pageAboutIsDisplayed();
     }
 }
