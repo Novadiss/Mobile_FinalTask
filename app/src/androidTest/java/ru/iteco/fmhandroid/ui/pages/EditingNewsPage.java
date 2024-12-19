@@ -20,6 +20,8 @@ import android.view.View;
 
 import org.hamcrest.Matchers;
 
+import java.util.Random;
+
 import io.qameta.allure.kotlin.Allure;
 import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.data.DataHelper;

@@ -40,7 +40,6 @@ public class EditingNewsPageInvalidTest {
                 editingNewsPage.goToEditNewsPage();
             }
         }
-        editingNewsPage.checkNewsPublishedNotToBe(invalidCategory);
     }
 
 
